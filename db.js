@@ -1,4 +1,6 @@
+import 'dotenv/config'
 import mongoose from "mongoose";
+
 
 // const DB_NAME = 'user';
 
@@ -18,6 +20,8 @@ const connectDB = async () => {
 }
 
 connectDB();
+
+//--env-file=.env
 
 const db = mongoose.connection;
 

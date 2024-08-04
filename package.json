@@ -5,12 +5,13 @@
   "main": "db.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --env-file=.env server.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.6.4",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
