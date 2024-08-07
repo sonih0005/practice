@@ -1,11 +1,13 @@
 import { Router } from "express";
 // import userFilter from "../userFilter";
-import {data, deleteUser, home, menu, menuDetails, savedToDb, updateDetails, userDetails, userFilter} from "../userFilter.js";
+import {data, deleteUser, home, menu, menuDetails, registerUser, savedToDb, updateDetails, userDetails, userFilter} from "../userFilter.js";
 import logTime from "../middleware/time.middleware.js";
+
 
 const router =Router();
 
 router.route('/home').get(logTime,home);
+router.route('/registerUser').post(registerUser)
 router.route('/user/:workType').get(userFilter);
 router.route('/register').get(savedToDb);
 router.route('/menu').post(menu);

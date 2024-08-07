@@ -1,4 +1,5 @@
 import { Menu } from "./models/menu.model.js";
+import { RegisterUser } from "./models/resgisterUser.model.js";
 import { User } from "./models/user.model.js";
 
 const userFilter = async (req, res) => {
@@ -47,6 +48,18 @@ const menu = async (req, res) => {
     console.log(error);
   }
 };
+
+const registerUser = async (req, res) => {
+  try {
+    const userData = req.body;
+    const newUserData = new RegisterUser(userData);
+
+    const savedRegisterUser = await newUserData.save();
+    res.status(200).json(savedRegisterUser);
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 const data = async (req, res) => {
   const dataObj = {
@@ -108,4 +121,4 @@ const deleteUser = async(req,res) => {
     }
 }
 
-export { home, userFilter, savedToDb, menu, data, userDetails, menuDetails, updateDetails, deleteUser };
+export { home, userFilter, savedToDb, menu, data, userDetails, menuDetails, updateDetails, deleteUser,registerUser };

@@ -3,6 +3,7 @@ import express, { Router } from "express";
 import db from "./db.js";
 import { User } from "./models/user.model.js";
 import { Menu } from "./models/menu.model.js";
+import { RegisterUser } from './models/resgisterUser.model.js';
 import bodyParser from "body-parser";
 import userRouter from './routes/user.routes.js'
 
