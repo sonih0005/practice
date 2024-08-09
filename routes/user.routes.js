@@ -1,12 +1,13 @@
 import { Router } from "express";
 // import userFilter from "../userFilter";
 import {data, deleteUser, home, menu, menuDetails, registerUser, savedToDb, updateDetails, userDetails, userFilter} from "../userFilter.js";
-import logTime from "../middleware/time.middleware.js";
+import passport from "passport";
 
 
 const router =Router();
 
-router.route('/home').get(logTime,home);
+router.route('/home').post(passport.authenticate('local', {session: false
+}),home);
 router.route('/registerUser').post(registerUser)
 router.route('/user/:workType').get(userFilter);
 router.route('/register').get(savedToDb);
